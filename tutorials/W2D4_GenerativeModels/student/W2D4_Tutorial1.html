@@ -420,6 +420,11 @@ const thebe_selector_output = ".output, .cell_output"
      Tutorial 2: Time series for Language
     </a>
 </li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../W2D5_TimeSeriesAndNaturalLanguageProcessing/student/W2D5_Tutorial3.html">
+     (Bonus) Tutorial 3: Multilingual Embeddings
+    </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 has-children">
@@ -2112,7 +2117,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "5b9233851b84434cb0e10d86d316ea31"}
+{"version_major": 2, "version_minor": 0, "model_id": "a1a6c90bd1bd498f81c0f97253f8245a"}
 </script></div>
 </div>
 <p>Download BigGAN (a generative model) and a few standard image datasets</p>
@@ -2246,9 +2251,9 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "614ac4ade1db424ab4dd7e8c4859cc16"}
+{"version_major": 2, "version_minor": 0, "model_id": "41364189e97c4ecea4c88685b34fe0ff"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "cee59a4148fa40d3947204bb5afb2144"}
+{"version_major": 2, "version_minor": 0, "model_id": "d6b37ae337f846e3bcaa88a8ac4516f6"}
 </script></div>
 </div>
 </div>
@@ -2286,9 +2291,9 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "1c1adbbb75424c28857ec027a1bffb19"}
+{"version_major": 2, "version_minor": 0, "model_id": "9b99dc8419354bd893d794c3a8012c11"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "9a1d4caa340245ed8a91b6465d2d0186"}
+{"version_major": 2, "version_minor": 0, "model_id": "cc79e77bb9ed4794bf2082dd0efc8c45"}
 </script></div>
 </div>
 <p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W2D4_GenerativeModels/solutions/W2D4_Tutorial1_Solution_f833b825.py"><em>Click for solution</em></a></p>
@@ -2435,9 +2440,9 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "dfbbe3adf04648fabbd5c02b045a71da"}
+{"version_major": 2, "version_minor": 0, "model_id": "e27376ba90f2456eba6989b8c37d8673"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "eacecdaac743461bb18a743fe13a1632"}
+{"version_major": 2, "version_minor": 0, "model_id": "d5e26b1739b544a2aadf16062e6b39ce"}
 </script></div>
 </div>
 </div>
@@ -2474,9 +2479,9 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "0a289b62cde54aa08a086954820932b5"}
+{"version_major": 2, "version_minor": 0, "model_id": "8ee85fe45e674e4bbf66bff462b23456"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "43eb104711094ca590cb95ef52e2aff2"}
+{"version_major": 2, "version_minor": 0, "model_id": "5d8cbb8231954243b78fd1a46cb4baab"}
 </script></div>
 </div>
 <p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W2D4_GenerativeModels/solutions/W2D4_Tutorial1_Solution_09759a98.py"><em>Click for solution</em></a></p>
@@ -2493,7 +2498,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "31f5022cccdc49e788d8689f2b08bc7b"}
+{"version_major": 2, "version_minor": 0, "model_id": "a0cea040823447c9817b2be685d3f87b"}
 </script></div>
 </div>
 <p>In the video, the concept of a latent variable model was introduced. We saw how PCA (principal component analysis) can be extended into a generative model with latent variables called probabilistic PCA (pPCA). For pPCA the latent variables (z in the video) are the projections onto the principal component axes.</p>
@@ -2602,8 +2607,8 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 <p><strong>Step 2</strong>: “Generate” from the pPCA model of the thermometer data.</p>
 <p>Complete the code so we generate data by sampling according to the pPCA model:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4b328456-7cec-4178-93a9-0def50713e1f">
-<span class="eqno">(86)<a class="headerlink" href="#equation-4b328456-7cec-4178-93a9-0def50713e1f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7903ee70-b140-4fc3-bbea-0e1b8e5c6889">
+<span class="eqno">(86)<a class="headerlink" href="#equation-7903ee70-b140-4fc3-bbea-0e1b8e5c6889" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 x = \mu + W z + \epsilon, \,\text{where}\,~~ \epsilon \sim \mathcal{N}(0,~\sigma^2 \mathbf{I})
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -2678,7 +2683,7 @@ x = \mu + W z + \epsilon, \,\text{where}\,~~ \epsilon \sim \mathcal{N}(0,~\sigma
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "7541ba542db04fa0b0dcbcb01ec7e1ec"}
+{"version_major": 2, "version_minor": 0, "model_id": "15743d9b5e9f43f68e142edf1bd89b13"}
 </script></div>
 </div>
 <p>Download MNIST and CIFAR10 datasets</p>
@@ -2831,13 +2836,13 @@ x = \mu + W z + \epsilon, \,\text{where}\,~~ \epsilon \sim \mathcal{N}(0,~\sigma
 <div class="section" id="section-3-1-conceptual-introduction-to-autoencoders">
 <h2>Section 3.1: Conceptual introduction to AutoEncoders<a class="headerlink" href="#section-3-1-conceptual-introduction-to-autoencoders" title="Permalink to this headline">¶</a></h2>
 <p>Now we’ll create our first autoencoder. It will reduce images down to <span class="math notranslate nohighlight">\(K\)</span> dimensions. The architecture will be quite simple: the input will be linearly mapped to a single hidden (or latent) layer <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> with <span class="math notranslate nohighlight">\(K\)</span> units, which will then be linearly mapped back to an output that is the same size as the input:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-444fd626-4d54-4aca-b733-675a4b6e3cba">
-<span class="eqno">(87)<a class="headerlink" href="#equation-444fd626-4d54-4aca-b733-675a4b6e3cba" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-99fc09e4-be95-4c79-bdc8-58d8f4e0dbd9">
+<span class="eqno">(87)<a class="headerlink" href="#equation-99fc09e4-be95-4c79-bdc8-58d8f4e0dbd9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{x} \longrightarrow \mathbf{h} \longrightarrow \mathbf{x'}
 \end{equation}\]</div>
 <p>The loss function we’ll use will simply be mean squared error (MSE) quantifying how well the reconstruction (<span class="math notranslate nohighlight">\(\mathbf{x'}\)</span>) matches the original image (<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-03aee180-01d0-4440-a395-5b2e9327d0d8">
-<span class="eqno">(88)<a class="headerlink" href="#equation-03aee180-01d0-4440-a395-5b2e9327d0d8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d0a7618b-0916-49e4-a6e5-1366f4730fe3">
+<span class="eqno">(88)<a class="headerlink" href="#equation-d0a7618b-0916-49e4-a6e5-1366f4730fe3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \text{MSE Loss} = \sum_{i=1}^{N} ||\mathbf{x}_i - \mathbf{x'}_i||^2_2 
 \end{equation}\]</div>
 <p>If all goes well, then the AutoEncoder will learn, <strong>end to end</strong>, a good “encoding” or “compression” of inputs to a latent representation (<span class="math notranslate nohighlight">\(\mathbf{x \longrightarrow h}\)</span>) as well as a good “decoding” of that latent representation to a reconstruction of the original input (<span class="math notranslate nohighlight">\(\mathbf{h \longrightarrow x'}\)</span>).</p>
@@ -3052,7 +3057,7 @@ x = \mu + W z + \epsilon, \,\text{where}\,~~ \epsilon \sim \mathcal{N}(0,~\sigma
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "ffe808443de7401c89f3787713119f22"}
+{"version_major": 2, "version_minor": 0, "model_id": "45f94a104be048368302f592fbc4d918"}
 </script></div>
 </div>
 <p>Let’s visualize some of the reconstructions (<span class="math notranslate nohighlight">\(\mathbf{x'}\)</span>) side-by-side with the input images (<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>).</p>
@@ -3129,9 +3134,9 @@ x = \mu + W z + \epsilon, \,\text{where}\,~~ \epsilon \sim \mathcal{N}(0,~\sigma
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "1ba59c6cf2a142258d2e5cd6a6ec5c83"}
+{"version_major": 2, "version_minor": 0, "model_id": "b53678809234483a89205a87f61c815a"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "9de60d8f53af4141a8928d82008eff92"}
+{"version_major": 2, "version_minor": 0, "model_id": "afb136201ccf49569b2d4acbe1055265"}
 </script></div>
 </div>
 <p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W2D4_GenerativeModels/solutions/W2D4_Tutorial1_Solution_2cc24bef.py"><em>Click for solution</em></a></p>
@@ -3423,7 +3428,7 @@ Size of ConvTranspose2D(Conv2D(image)) torch.Size([1, 1, 28, 28])
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "515c0740f0764d71846718643ae854f3"}
+{"version_major": 2, "version_minor": 0, "model_id": "45338a9db80141408bf442e613786fcc"}
 </script></div>
 </div>
 <p>Train a VAE for MNIST while watching the video. (Note: this VAE has a 2D latent space. If you are feeling ambitious, edit the code and modify the latent space dimensionality and see what happens.)</p>
@@ -3693,23 +3698,23 @@ Size of ConvTranspose2D(Conv2D(image)) torch.Size([1, 1, 28, 28])
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "2c9b1b3a8c4e4760a5705b915a22f754"}
+{"version_major": 2, "version_minor": 0, "model_id": "2dccc51103164b298d3cf809cd619be3"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "533655fbe59342b9b6a4b166aee9d7f9"}
+{"version_major": 2, "version_minor": 0, "model_id": "861f5f102670458db9c0d08d325ebeaf"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "7adf2c74779d48b6b8916bd16d2c7dee"}
+{"version_major": 2, "version_minor": 0, "model_id": "d0f4ee4e5b7d4ca4b44e16ae9bf50b96"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "75a0189993ae4969b2a16bd732208f50"}
+{"version_major": 2, "version_minor": 0, "model_id": "13749e8b37424b398c98a408dff3d622"}
 </script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_47355</span><span class="o">/</span><span class="mf">2721397587.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_46706</span><span class="o">/</span><span class="mf">2721397587.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">    </span><span class="mi">245</span> 
 <span class="g g-Whitespace">    </span><span class="mi">246</span> <span class="n">trained_conv_VarAE</span> <span class="o">=</span> <span class="n">ConvVAE</span><span class="p">(</span><span class="n">K</span><span class="o">=</span><span class="n">K_VAE</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">247</span> <span class="n">elbo_vals</span> <span class="o">=</span> <span class="n">train_vae</span><span class="p">(</span><span class="n">trained_conv_VarAE</span><span class="p">,</span> <span class="n">train_set</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">248</span> 
 <span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Learned sigma_x is </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">trained_conv_VarAE</span><span class="o">.</span><span class="n">log_sig_x</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
-<span class="nn">/tmp/ipykernel_47355/2721397587.py</span> in <span class="ni">train_vae</span><span class="nt">(vae, dataset, epochs, n_samples)</span>
+<span class="nn">/tmp/ipykernel_46706/2721397587.py</span> in <span class="ni">train_vae</span><span class="nt">(vae, dataset, epochs, n_samples)</span>
 <span class="g g-Whitespace">    </span><span class="mi">235</span>       <span class="n">opt</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">236</span>       <span class="n">loss</span> <span class="o">=</span> <span class="o">-</span><span class="n">vae</span><span class="o">.</span><span class="n">elbo</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">237</span>       <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
@@ -3742,25 +3747,25 @@ Size of ConvTranspose2D(Conv2D(image)) torch.Size([1, 1, 28, 28])
 <p><em>Recognition models and density networks</em></p>
 <p>Variational AutoEncoders (VAEs) are a lot like the classic AutoEncoders (AEs), but where we explicitly think about probability distributions. In the language of VAEs, the <strong>encoder</strong> is replaced with a <strong>recognition model</strong>, and the <strong>decoder</strong> is replaced with a <strong>density network</strong>.</p>
 <p>Where in a classic autoencoder the encoder maps from images to a single hidden vector,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d3fe24b9-b80e-402a-9a90-e8d3d901a357">
-<span class="eqno">(89)<a class="headerlink" href="#equation-d3fe24b9-b80e-402a-9a90-e8d3d901a357" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f0112402-4bcd-4448-9678-8b965449eedb">
+<span class="eqno">(89)<a class="headerlink" href="#equation-f0112402-4bcd-4448-9678-8b965449eedb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{x} \overset{\text{AE}}{\longrightarrow} \mathbf{h} \, ,
 \end{equation}\]</div>
 <p>in a VAE we would say that a recognition model maps from inputs to entire <strong>distributions</strong> over hidden vectors,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b10f9239-f098-450e-a523-15e0d12316d3">
-<span class="eqno">(90)<a class="headerlink" href="#equation-b10f9239-f098-450e-a523-15e0d12316d3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9ea48f64-8bcf-4c83-8ab4-9ba0e0c8e074">
+<span class="eqno">(90)<a class="headerlink" href="#equation-9ea48f64-8bcf-4c83-8ab4-9ba0e0c8e074" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{x} \overset{\text{VAE}}{\longrightarrow} q_{\mathbf{w_e}}(\mathbf{z}) \, ,
 \end{equation}\]</div>
 <p>which we will then sample from. Here <span class="math notranslate nohighlight">\(\mathbf{w_e}\)</span> refers to the weights of the recognition model, which parametarize our distribution generating network. We’ll say more in a moment about what kind of distribution <span class="math notranslate nohighlight">\(q_{\mathbf{w_e}}(\mathbf{z})\)</span> is.
 Part of what makes VAEs work is that the loss function will require good reconstructions of the input not just for a single <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, but <em>on average</em> from samples of <span class="math notranslate nohighlight">\(\mathbf{z} \sim q_{\mathbf{w_e}}(\mathbf{z})\)</span>.</p>
 <p>In the classic autoencoder, we had a decoder which maps from hidden vectors to reconstructions of the input:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-015cb275-c48b-4139-b427-8992ef41ae93">
-<span class="eqno">(91)<a class="headerlink" href="#equation-015cb275-c48b-4139-b427-8992ef41ae93" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-28936bf2-9e4c-416c-8bc8-044319be2989">
+<span class="eqno">(91)<a class="headerlink" href="#equation-28936bf2-9e4c-416c-8bc8-044319be2989" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{h} \overset{\text{AE}}{\longrightarrow} \mathbf{x'} \, .
 \end{equation}\]</div>
 <p>In a density network, reconstructions are expressed in terms of a distribution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-128281bf-3b29-4d48-a7df-e5059b038f63">
-<span class="eqno">(92)<a class="headerlink" href="#equation-128281bf-3b29-4d48-a7df-e5059b038f63" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e20ce49c-2908-4281-b039-30589bf73e35">
+<span class="eqno">(92)<a class="headerlink" href="#equation-e20ce49c-2908-4281-b039-30589bf73e35" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{z} \overset{\text{VAE}}{\longrightarrow} p_{\mathbf{w_d}}(\mathbf{x}|\mathbf{z})
 \end{equation}\]</div>
 <p>where, as above, <span class="math notranslate nohighlight">\(p_{\mathbf{w_d}}(\mathbf{x}|\mathbf{z})\)</span> is defined by mapping <span class="math notranslate nohighlight">\(\mathbf{z}\)</span> through a density network then treating the resulting <span class="math notranslate nohighlight">\(f(\mathbf{z};\mathbf{w_d})\)</span> as the mean of a (Gaussian) distribution over <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>. Similarly, our reconstruction distribution is parametarized by the weights of the density network.</p>
@@ -3768,13 +3773,13 @@ Part of what makes VAEs work is that the loss function will require good reconst
 <div class="section" id="section-4-2-generating-novel-images-from-the-decoder">
 <h2>Section 4.2: Generating novel images from the decoder<a class="headerlink" href="#section-4-2-generating-novel-images-from-the-decoder" title="Permalink to this headline">¶</a></h2>
 <p>If we isolate the decoder part of the AutoEncoder, what we have is a neural network that takes as input a vector of size <span class="math notranslate nohighlight">\(K\)</span> and produces as output an image that looks something like our training data. Recall that in our earlier notation, we had an input <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> that was mapped to a low-dimensional hidden representation <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> which was then decoded into a reconstruction of the input, <span class="math notranslate nohighlight">\(\mathbf{x'}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c3ca2e2d-2b0d-4f1b-98d7-233618ee77d5">
-<span class="eqno">(93)<a class="headerlink" href="#equation-c3ca2e2d-2b0d-4f1b-98d7-233618ee77d5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a42dbabe-b695-4e81-adeb-1e502b292763">
+<span class="eqno">(93)<a class="headerlink" href="#equation-a42dbabe-b695-4e81-adeb-1e502b292763" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{x} \overset{\text{encode}}{\longrightarrow} \mathbf{h} \overset{\text{decode}}{\longrightarrow} \mathbf{x'}\, .
 \end{equation}\]</div>
 <p>Partly as a matter of convention, and partly to distinguish where we are going next from the previous section, we’re going to introduce a new variable, <span class="math notranslate nohighlight">\(\mathbf{z} \in \mathbb{R}^K\)</span>, which will take the place of <span class="math notranslate nohighlight">\(\mathbf{h}\)</span>. The key difference is that while <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> is produced by the encoder for a particular <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{z}\)</span> will be drawn out of thin air from a prior of our choosing:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a05340b2-4fbe-43cb-bd98-99a415e68fa7">
-<span class="eqno">(94)<a class="headerlink" href="#equation-a05340b2-4fbe-43cb-bd98-99a415e68fa7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fcddf3c1-e0bd-4d63-b4fc-fc8fc272b890">
+<span class="eqno">(94)<a class="headerlink" href="#equation-fcddf3c1-e0bd-4d63-b4fc-fc8fc272b890" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \mathbf{z} \sim p(\mathbf{z})\\ \mathbf{z} \overset{\text{decode}}{\longrightarrow} \mathbf{x}\, .
 \end{equation}\]</div>
 <p>(Note that it is also common convention to drop the “prime” on <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> when it is no longer being thought of as a “reconstruction”).</p>
