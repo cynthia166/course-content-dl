@@ -1337,8 +1337,8 @@ with zipfile.ZipFile(fname, 'r') as zipObj:
 <h2>Training multilingual embeddings<a class="headerlink" href="#training-multilingual-embeddings" title="Permalink to this headline">¶</a></h2>
 <p>We first train separate embeddings for each language using fastText and a combination of data from Facebook and Wikipedia. Then, we find a dictionary of common words between the two languages. The dictionaries are automatically induced from parallel data - datasets consisting of a pair of sentences in two languages with the same meaning.</p>
 <p>Then, we find a matrix that projects the embeddings into a common space between the given languages. The matrix is designed to minimize the distance between a word <span class="math notranslate nohighlight">\(x_i\)</span> and its projection <span class="math notranslate nohighlight">\(y_i\)</span>. If our dictionary consists of pairs <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>, our projector <span class="math notranslate nohighlight">\(M\)</span> would be:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-61c140f0-fba4-4f77-9396-69ce3a1dbb02">
-<span class="eqno">(100)<a class="headerlink" href="#equation-61c140f0-fba4-4f77-9396-69ce3a1dbb02" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-91a04709-9373-4f6c-bb88-8a08e78b4c22">
+<span class="eqno">(100)<a class="headerlink" href="#equation-91a04709-9373-4f6c-bb88-8a08e78b4c22" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 M = \underset{W}{\operatorname{argmax}} \sum_i ||x_i - Wy_i||^2
 \end{equation}\]</div>
 <p>Also, the projector matrix <span class="math notranslate nohighlight">\(W\)</span> is constrained to e orthogonal, so actual distances between word embedding vectors are preserved. Multilingual models are trained by using our multilingual word embeddings as the base representations in DeepText and “freezing” them or leaving them unchanged during the training process.</p>
