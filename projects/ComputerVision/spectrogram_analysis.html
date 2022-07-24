@@ -1161,7 +1161,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/NeuromatchAcademy/course-content-dl/blob/main/projects/ComputerVision/spectrogram_analysis.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>    <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/projects/ComputerVision/spectrogram_analysis.ipynb" target="_blank"><img alt="Open in Kaggle" src="https://kaggle.com/static/images/open-in-kaggle.svg" /></a></p>
+  <p><a href="https://colab.research.google.com/github/NeuromatchAcademy/course-content-dl/blob/main/projects/ComputerVision/spectrogram_analysis.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>   <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/projects/ComputerVision/spectrogram_analysis.ipynb" target="_blank"><img alt="Open in Kaggle" src="https://kaggle.com/static/images/open-in-kaggle.svg" /></a></p>
 <div class="section" id="music-classification-and-generation-with-spectrograms">
 <h1>Music classification and generation with spectrograms<a class="headerlink" href="#music-classification-and-generation-with-spectrograms" title="Permalink to this headline">¶</a></h1>
 <p><strong>By Neuromatch Academy</strong></p>
@@ -1175,12 +1175,14 @@ title="Print to PDF"
 <h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
 <p>This notebook was written by Beatrix Benkő and Lina Teichmann.</p>
 <p><strong>Useful code examples:</strong></p>
-<p>https://towardsdatascience.com/music-genre-classification-with-python-c714d032f0d8</p>
-<p><a class="reference external" href="https://pytorch.org/vision/stable/models.html">https://pytorch.org/vision/stable/models.html</a></p>
-<p><a class="reference external" href="https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py">https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py</a></p>
-<p>https://github.com/kamalesh0406/Audio-Classification</p>
-<p>https://github.com/zcaceres/spec_augment</p>
-<p>https://musicinformationretrieval.com/ipython_audio.html</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://towardsdatascience.com/music-genre-classification-with-python-c714d032f0d8">towardsdatascience.com/music-genre-classification-with-python</a></p></li>
+<li><p><a class="reference external" href="https://pytorch.org/vision/stable/models.html">pytorch.org/vision</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py">rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/kamalesh0406/Audio-Classification">github.com/kamalesh0406/Audio-Classification</a></p></li>
+<li><p><a class="reference external" href="https://github.com/zcaceres/spec_augment">github.com/zcaceres/spec_augment</a></p></li>
+<li><p><a class="reference external" href="https://musicinformationretrieval.com/ipython_audio.html">musicinformationretrieval.com/ipython_audio</a></p></li>
+</ul>
 </div>
 </div>
 <hr class="docutils" />
@@ -1202,8 +1204,11 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading package lists...
 Building dependency tree...
 Reading state information...
-ffmpeg is already the newest version (7:3.4.8-0ubuntu0.2).
-0 upgraded, 0 newly installed, 0 to remove and 40 not upgraded.
+ffmpeg is already the newest version (7:3.4.11-0ubuntu0.1).
+The following package was automatically installed and is no longer required:
+  libnvidia-common-460
+Use &#39;sudo apt autoremove&#39; to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 49 not upgraded.
 </pre></div>
 </div>
 </div>
@@ -1228,6 +1233,8 @@ ffmpeg is already the newest version (7:3.4.8-0ubuntu0.2).
 <span class="kn">import</span> <span class="nn">librosa.display</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
 </div>
 </div>
 <div class="cell docutils container">
@@ -1255,7 +1262,7 @@ ffmpeg is already the newest version (7:3.4.8-0ubuntu0.2).
 </div>
 <div class="section" id="loading-gtzan-dataset-includes-spectrograms">
 <h2>Loading GTZAN dataset (includes spectrograms)<a class="headerlink" href="#loading-gtzan-dataset-includes-spectrograms" title="Permalink to this headline">¶</a></h2>
-<p>The GTZAN dataset for music genre classification can be dowloaded from Kaggle: https://www.kaggle.com/andradaolteanu/gtzan-dataset-music-genre-classification.</p>
+<p>The GTZAN dataset for music genre classification can be dowloaded from <a class="reference external" href="https://www.kaggle.com/andradaolteanu/gtzan-dataset-music-genre-classification">Kaggle</a>.</p>
 <p>To download from Kaggle using this code you need to download and copy over your api token. In Kaggle go to the upper right side -&gt; account -&gt; API -&gt; create API token. This downloads a json file. Copy the content into api_token. It should look like this:</p>
 <p>api_token = {“username”:”johnsmith”,”key”:”123a123a123”}</p>
 <div class="cell docutils container">
@@ -1417,8 +1424,6 @@ Length of audio: 30.013333333333332
 
   <span class="k">return</span> <span class="n">device</span>
 
-
-<span class="c1">#  Plotting function.</span>
 
 <span class="k">def</span> <span class="nf">plot_loss_accuracy</span><span class="p">(</span><span class="n">train_loss</span><span class="p">,</span> <span class="n">train_acc</span><span class="p">,</span> <span class="n">validation_loss</span><span class="p">,</span> <span class="n">validation_acc</span><span class="p">):</span>
   <span class="n">epochs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loss</span><span class="p">)</span>
@@ -1625,7 +1630,7 @@ Length of audio: 30.013333333333332
         <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">predicted</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
 
       <span class="c1"># append the loss for this epoch</span>
-      <span class="n">train_loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">running_loss</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">))</span>
+      <span class="n">train_loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">running_loss</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">))</span>
       <span class="n">train_acc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">correct</span><span class="o">/</span><span class="n">total</span><span class="p">)</span>
 
       <span class="c1"># evaluate on validation data</span>
@@ -1660,17 +1665,16 @@ Length of audio: 30.013333333333332
 
 <span class="n">net</span> <span class="o">=</span> <span class="n">music_net</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 <span class="n">train_loss</span><span class="p">,</span> <span class="n">train_acc</span><span class="p">,</span> <span class="n">validation_loss</span><span class="p">,</span> <span class="n">validation_acc</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Detach tensors from GPU</span>
 <span class="n">plot_loss_accuracy</span><span class="p">(</span><span class="n">train_loss</span><span class="p">,</span> <span class="n">train_acc</span><span class="p">,</span> <span class="n">validation_loss</span><span class="p">,</span> <span class="n">validation_acc</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "5e260fc67494475bbcb1ccefad0ceba9", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<img alt="../../_images/spectrogram_analysis_26_3.png" src="../../_images/spectrogram_analysis_26_3.png" />
+{"model_id": "897f8ff8498140c794e3360508956cc5", "version_major": 2, "version_minor": 0}
+</script><img alt="../../_images/spectrogram_analysis_26_2.png" src="../../_images/spectrogram_analysis_26_2.png" />
 </div>
 </div>
 </div>

@@ -1248,17 +1248,16 @@ title="Print to PDF"
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># @title Install dependencies
-# !pip install --upgrade pip setuptools wheel --quiet
+!pip install --upgrade pip setuptools wheel --quiet
 !pip install dm-acme[jax,tensorflow] --quiet
-!pip install dm-acme[envs] --quiet
 !pip install dm-sonnet --quiet
 !pip install trfl --quiet
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: dm-acme 0.4.0 does not provide the extra &#39;tensorflow&#39;</span>
-<span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
+<span class=" -Color -Color-Yellow">WARNING: dm-acme 0.4.0 does not provide the extra &#39;tensorflow&#39;</span>
 <span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
 <span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
 <span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
@@ -1270,7 +1269,6 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports</span>
-
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1419,7 +1417,7 @@ The HCP dataset from NMA-CN contains behavioral and imaging data for 7 cognitive
 <img alt="../../_images/human_rl_15_1.png" src="../../_images/human_rl_15_1.png" />
 <img alt="../../_images/human_rl_15_2.png" src="../../_images/human_rl_15_2.png" />
 <div class="output text_html">
-  <div id="df-6243bc90-f9ac-49b7-849e-3fbd3dbe1c9a">
+  <div id="df-b39609f0-4ca2-4521-bab2-fb91f1124d1c">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1453,7 +1451,7 @@ The HCP dataset from NMA-CN contains behavioral and imaging data for 7 cognitive
       <th>0</th>
       <td>sub-1</td>
       <td>1</td>
-      <td>F</td>
+      <td>B</td>
       <td>None</td>
       <td>NaN</td>
       <td>None</td>
@@ -1463,7 +1461,7 @@ The HCP dataset from NMA-CN contains behavioral and imaging data for 7 cognitive
       <th>1</th>
       <td>sub-1</td>
       <td>2</td>
-      <td>E</td>
+      <td>B</td>
       <td>None</td>
       <td>NaN</td>
       <td>None</td>
@@ -1475,7 +1473,7 @@ The HCP dataset from NMA-CN contains behavioral and imaging data for 7 cognitive
       <td>3</td>
       <td>D</td>
       <td>non-match</td>
-      <td>2.334214</td>
+      <td>1.637974</td>
       <td>non-match</td>
       <td>1</td>
     </tr>
@@ -1483,26 +1481,26 @@ The HCP dataset from NMA-CN contains behavioral and imaging data for 7 cognitive
       <th>3</th>
       <td>sub-1</td>
       <td>4</td>
-      <td>A</td>
-      <td>match</td>
-      <td>0.215188</td>
+      <td>C</td>
       <td>non-match</td>
-      <td>0</td>
+      <td>0.096110</td>
+      <td>non-match</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>4</th>
       <td>sub-1</td>
       <td>5</td>
-      <td>A</td>
-      <td>match</td>
-      <td>0.119143</td>
+      <td>B</td>
       <td>non-match</td>
-      <td>0</td>
+      <td>0.703303</td>
+      <td>non-match</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-6243bc90-f9ac-49b7-849e-3fbd3dbe1c9a')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-b39609f0-4ca2-4521-bab2-fb91f1124d1c')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1553,12 +1551,12 @@ The HCP dataset from NMA-CN contains behavioral and imaging data for 7 cognitive
 
       <script>
         const buttonEl =
-          document.querySelector('#df-6243bc90-f9ac-49b7-849e-3fbd3dbe1c9a button.colab-df-convert');
+          document.querySelector('#df-b39609f0-4ca2-4521-bab2-fb91f1124d1c button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-6243bc90-f9ac-49b7-849e-3fbd3dbe1c9a');
+          const element = document.querySelector('#df-b39609f0-4ca2-4521-bab2-fb91f1124d1c');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1932,7 +1930,7 @@ rewards:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-96e1bea3-3300-4323-b0c3-c928d4540408">
+  <div id="df-4879f849-c280-45fe-86fc-951e0da978da">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1963,47 +1961,47 @@ rewards:
     <tr>
       <th>995</th>
       <td>32</td>
-      <td>-6.0</td>
-      <td>300.396435</td>
+      <td>-8.0</td>
+      <td>364.026677</td>
       <td>996</td>
       <td>31872</td>
     </tr>
     <tr>
       <th>996</th>
       <td>32</td>
-      <td>-4.0</td>
-      <td>381.083839</td>
+      <td>-10.0</td>
+      <td>345.859582</td>
       <td>997</td>
       <td>31904</td>
     </tr>
     <tr>
       <th>997</th>
       <td>32</td>
-      <td>-8.0</td>
-      <td>403.665982</td>
+      <td>-10.0</td>
+      <td>370.050615</td>
       <td>998</td>
       <td>31936</td>
     </tr>
     <tr>
       <th>998</th>
       <td>32</td>
-      <td>-9.0</td>
-      <td>323.130456</td>
+      <td>-16.0</td>
+      <td>379.613671</td>
       <td>999</td>
       <td>31968</td>
     </tr>
     <tr>
       <th>999</th>
       <td>32</td>
-      <td>-7.0</td>
-      <td>321.238755</td>
+      <td>-16.0</td>
+      <td>367.838720</td>
       <td>1000</td>
       <td>32000</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-96e1bea3-3300-4323-b0c3-c928d4540408')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4879f849-c280-45fe-86fc-951e0da978da')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -2054,12 +2052,12 @@ rewards:
 
       <script>
         const buttonEl =
-          document.querySelector('#df-96e1bea3-3300-4323-b0c3-c928d4540408 button.colab-df-convert');
+          document.querySelector('#df-4879f849-c280-45fe-86fc-951e0da978da button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-96e1bea3-3300-4323-b0c3-c928d4540408');
+          const element = document.querySelector('#df-4879f849-c280-45fe-86fc-951e0da978da');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
