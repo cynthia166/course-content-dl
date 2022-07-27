@@ -40,7 +40,7 @@ print("Training all models using the control, unbiased training dataset\n")
 full_training_procedure(
     train_sampler_bias_ctrl, test_sampler_for_bias_ctrl,
     title="Classifier performances with control, unbiased training dataset",
-    dataset_type="bias_ctrl" # For loading correct pre-trained networks
+    dataset_type="bias_ctrl"  # For loading correct pre-trained networks
     )
 -------------------
 

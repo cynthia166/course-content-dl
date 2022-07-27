@@ -945,6 +945,17 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#downgrade-pytorch-to-avoid-cuda-memory-allocation-error">
+     Downgrade
+     <code class="docutils literal notranslate">
+<span class="pre">
+       pytorch
+      </span>
+</code>
+     to avoid CUDA Memory allocation error.
+    </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#install-dependencies">
      Install dependencies
     </a>
@@ -1451,6 +1462,17 @@ const thebe_selector_output = ".output, .cell_output"
    Setup
   </a>
 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#downgrade-pytorch-to-avoid-cuda-memory-allocation-error">
+     Downgrade
+     <code class="docutils literal notranslate">
+<span class="pre">
+       pytorch
+      </span>
+</code>
+     to avoid CUDA Memory allocation error.
+    </a>
+</li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#install-dependencies">
      Install dependencies
@@ -1961,6 +1983,17 @@ const thebe_selector_output = ".output, .cell_output"
 <hr class="docutils"/>
 <div class="section" id="setup">
 <h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="downgrade-pytorch-to-avoid-cuda-memory-allocation-error">
+<h2>Downgrade <code class="docutils literal notranslate"><span class="pre">pytorch</span></code> to avoid CUDA Memory allocation error.<a class="headerlink" href="#downgrade-pytorch-to-avoid-cuda-memory-allocation-error" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Downgrade `pytorch` to avoid CUDA Memory allocation error.</span>
+<span class="o">!</span>pip install <span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.11.0+cu113 <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.12.0+cu113 <span class="nv">torchaudio</span><span class="o">==</span><span class="m">0</span>.11.0 <span class="nv">torchtext</span><span class="o">==</span><span class="m">0</span>.12.0 --extra-index-url https://download.pytorch.org/whl/cu113 --quiet
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="install-dependencies">
 <h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
@@ -1993,19 +2026,10 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">zfile</span><span class="o">.</span><span class="n">extractall</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Download completed!"</span><span class="p">)</span>
 
-
-<span class="c1"># @markdown Import modules designed for use in this tutorials</span>
-<span class="kn">from</span> <span class="nn">neuromatch_ssl_tutorial.modules</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">load</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">plot_util</span>
-<span class="kn">from</span> <span class="nn">neuromatch_ssl_tutorial.modules</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">load</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">plot_util</span>
-<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
-<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">load</span><span class="p">);</span>
-<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">models</span><span class="p">)</span>
-<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">plot_util</span><span class="p">);</span>
-
 <span class="o">!</span>pip install git+https://github.com/NeuromatchAcademy/evaltools --quiet
 
 <span class="kn">from</span> <span class="nn">evaltools.airtable</span> <span class="kn">import</span> <span class="n">AirtableForm</span>
-<span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span><span class="s1">'W3D3_T1'</span><span class="p">,</span><span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/c2c522fd-3361-4414-a019-d0d6a6325ebe'</span><span class="p">)</span>
+<span class="n">atform</span> <span class="o">=</span> <span class="n">AirtableForm</span><span class="p">(</span><span class="s1">'appn7VdPRseSoMXEG'</span><span class="p">,</span> <span class="s1">'W3D3_T1'</span><span class="p">,</span> <span class="s1">'https://portal.neuromatchacademy.org/api/redirect/to/c2c522fd-3361-4414-a019-d0d6a6325ebe'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2025,6 +2049,19 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">import</span> <span class="nn">torchvision</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Import modules designed for use in this notebook.</span>
+<span class="kn">from</span> <span class="nn">neuromatch_ssl_tutorial.modules</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">load</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">plot_util</span>
+<span class="kn">from</span> <span class="nn">neuromatch_ssl_tutorial.modules</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">load</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">plot_util</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">load</span><span class="p">)</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">models</span><span class="p">)</span>
+<span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">plot_util</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module 'neuromatch_ssl_tutorial.modules.plot_util' from '/home/runner/work/course-content-dl/course-content-dl/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/student/neuromatch_ssl_tutorial/modules/plot_util.py'&gt;
 </pre></div>
 </div>
 </div>
@@ -2349,7 +2386,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "054d1e2dcf20465a8eef184bbf61dc14"}
+{"version_major": 2, "version_minor": 0, "model_id": "a0f07e6a74264fceb6a11c75e31a0e05"}
 </script></div>
 </div>
 </div>
@@ -2363,7 +2400,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "2b01e2c1a097444dadc5d250ace977bc"}
+{"version_major": 2, "version_minor": 0, "model_id": "3c1d647515d143c298a51fecb39a24e0"}
 </script></div>
 </div>
 </div>
@@ -2403,13 +2440,13 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_37_0.png" src="../../../_images/W3D3_Tutorial1_37_0.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_39_0.png" src="../../../_images/W3D3_Tutorial1_39_0.png"/>
 </div>
 </div>
 <p>To better understand the <code class="docutils literal notranslate"><span class="pre">posX</span></code> and <code class="docutils literal notranslate"><span class="pre">posY</span></code> latent dimensions (which will be most relevant in <strong>Bonus 2</strong>), we plot the images with some annotations. The annotations (in red) do not modify the actual images; they are added <strong>purely for visualization purposes</strong>, and show:</p>
 <ul class="simple">
 <li><p>the <strong>edges</strong> of the <code class="docutils literal notranslate"><span class="pre">posX</span></code> and <code class="docutils literal notranslate"><span class="pre">posY</span></code> spans, and</p></li>
-<li><p>the <strong>center</strong>, i.e. <code class="docutils literal notranslate"><span class="pre">(posX,</span> <span class="pre">posY)</span></code>, for each shape.</p></li>
+<li><p>the <strong>center</strong>, i.e., <code class="docutils literal notranslate"><span class="pre">(posX,</span> <span class="pre">posY)</span></code>, for each shape.</p></li>
 </ul>
 <p><em><strong>Note on shape positions:</strong> Notice that all shape centers are positioned <strong>within the area marked by the red square</strong>. <code class="docutils literal notranslate"><span class="pre">posX</span></code> and <code class="docutils literal notranslate"><span class="pre">posY</span></code> actually describe the relative position of the center of a shape within this area: <code class="docutils literal notranslate"><span class="pre">posX=0</span></code> (left) to <code class="docutils literal notranslate"><span class="pre">posX=1</span></code> (right), and <code class="docutils literal notranslate"><span class="pre">posY=0</span></code> (top) to <code class="docutils literal notranslate"><span class="pre">posY=1</span></code> (bottom). No shape center appears outside, in the buffer area. This choice in the dSprites dataset design ensures that shapes of different scales and rotations <strong>all appear fully</strong>.</em></p>
 <div class="cell docutils container">
@@ -2420,7 +2457,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_39_0.png" src="../../../_images/W3D3_Tutorial1_39_0.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_41_0.png" src="../../../_images/W3D3_Tutorial1_41_0.png"/>
 </div>
 </div>
 </div>
@@ -2442,7 +2479,7 @@ WARNING: For this notebook to perform best, if possible, in the menu under `Runt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_43_0.png" src="../../../_images/W3D3_Tutorial1_43_0.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_45_0.png" src="../../../_images/W3D3_Tutorial1_45_0.png"/>
 </div>
 </div>
 <p>The following code:</p>
@@ -2507,9 +2544,9 @@ Dataset size: 16000 training, 4000 test images
   <span class="n">dataset</span><span class="o">=</span><span class="n">dSprites_torchdataset</span><span class="p">,</span>
   <span class="n">train_sampler</span><span class="o">=</span><span class="n">train_sampler</span><span class="p">,</span>
   <span class="n">test_sampler</span><span class="o">=</span><span class="n">test_sampler</span><span class="p">,</span>
-  <span class="n">freeze_features</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># There is no feature encoder to train here, anyway</span>
+  <span class="n">freeze_features</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># There is no feature encoder to train here, anyway</span>
   <span class="n">num_epochs</span><span class="o">=</span><span class="n">num_epochs</span><span class="p">,</span>
-  <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># Print results</span>
+  <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># Print results</span>
   <span class="p">)</span>
 </pre></div>
 </div>
@@ -2520,7 +2557,7 @@ Training a classifier directly on the images...
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "8a514cdfca6c4be9b385ae38f9c53116"}
+{"version_major": 2, "version_minor": 0, "model_id": "bacf815ff3e74e45bac3557204e49ed9"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Network performance after 25 classifier training epochs (chance: 33.33%):
     Training accuracy: 51.81%
     Testing accuracy: 39.55%
@@ -2597,7 +2634,7 @@ Training a classifier directly on the images...
   <span class="c1"># then remove or comment the line below to test your implementation</span>
   <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"Exercise: Train a supervised encoder and classifier."</span><span class="p">)</span>
   <span class="c1">#################################################</span>
-  <span class="c1"># EXERCISE: Train an encoder and classifier on the images, using models.train_classifier()</span>
+  <span class="c1"># Train an encoder and classifier on the images, using models.train_classifier()</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">"Training a supervised encoder and classifier..."</span><span class="p">)</span>
   <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">train_classifier</span><span class="p">(</span>
       <span class="n">encoder</span><span class="o">=...</span><span class="p">,</span>
@@ -2615,19 +2652,19 @@ Training a classifier directly on the images...
 <span class="c1"># Add event to airtable</span>
 <span class="n">atform</span><span class="o">.</span><span class="n">add_event</span><span class="p">(</span><span class="s1">'Coding Exercise 1.2.1: Training a logistic regression classifier along with an encoder'</span><span class="p">)</span>
 
-<span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Proposed number of training epochs</span>
+<span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Proposed number of training epochs</span>
 <span class="c1">## Uncomment below to test your function</span>
 <span class="c1"># supervised_encoder = train_supervised_encoder(num_epochs=num_epochs, seed=SEED)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_714f020c.py"><em>Click for solution</em></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Network</span> <span class="n">performance</span> <span class="n">after</span> <span class="mi">10</span> <span class="n">encoder</span> <span class="ow">and</span> <span class="n">classifier</span> <span class="n">training</span> <span class="n">epochs</span> <span class="p">(</span><span class="n">chance</span><span class="p">:</span> <span class="mf">33.33</span><span class="o">%</span><span class="p">):</span>
     <span class="n">Training</span> <span class="n">accuracy</span><span class="p">:</span> <span class="mf">100.00</span><span class="o">%</span>
-    <span class="n">Testing</span> <span class="n">accuracy</span><span class="p">:</span> <span class="mf">98.38</span><span class="o">%</span>
+    <span class="n">Testing</span> <span class="n">accuracy</span><span class="p">:</span> <span class="mf">98.67</span><span class="o">%</span>
 </pre></div>
 </div>
+<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_35783cc8.py"><em>Click for solution</em></a></p>
 <p>When the classifier is trained with an encoder network, however, it achieves very high classification accuracy (98.72%) on the test set, after only 10 training epochs.</p>
 <p><b>Shape classification results using different feature encoders:</b></p>
 <table class="colwidths-auto table">
@@ -2642,7 +2679,7 @@ Training a classifier directly on the images...
 <tr class="row-even"><td><p><em>33.33%</em></p></td>
 <td><p></p></td>
 <td><p>39.55%</p></td>
-<td><p>98.38%</p></td>
+<td><p>98.67%</p></td>
 </tr>
 </tbody>
 </table>
@@ -2658,7 +2695,7 @@ Training a classifier directly on the images...
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "b932a46e229149148154aca52f998641"}
+{"version_major": 2, "version_minor": 0, "model_id": "cffab7c890b54db581a1b734eb7c4d28"}
 </script></div>
 </div>
 </div>
@@ -2744,9 +2781,7 @@ Training a classifier directly on the images...
   <span class="n">rsm</span> <span class="o">=</span> <span class="o">...</span>
 
   <span class="k">if</span> <span class="ow">not</span> <span class="n">rsm</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">num_items</span><span class="p">,</span> <span class="n">num_items</span><span class="p">):</span>
-    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">"RSM should be of shape (</span><span class="si">{</span><span class="n">num_items</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">num_items</span><span class="si">}</span><span class="s2">)"</span>
-        <span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"RSM should be of shape (</span><span class="si">{</span><span class="n">num_items</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">num_items</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 
   <span class="k">return</span> <span class="n">rsm</span>
 
@@ -2760,7 +2795,7 @@ Training a classifier directly on the images...
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_cd9dc129.py"><em>Click for solution</em></a></p>
+<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_e983d23d.py"><em>Click for solution</em></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">custom_torch_RSM_fct</span><span class="p">()</span> <span class="ow">is</span> <span class="n">correctly</span> <span class="n">implemented</span><span class="o">.</span>
 </pre></div>
 </div>
@@ -2775,13 +2810,13 @@ Training a classifier directly on the images...
 <p><strong>Interactive Demo:</strong> In the current example, the rows and columns of the RSM are organized along the <code class="docutils literal notranslate"><span class="pre">shape</span></code> latent dimension. Try organizing them along one of the other latent dimensions (<code class="docutils literal notranslate"><span class="pre">"scale"</span></code>, <code class="docutils literal notranslate"><span class="pre">"orientation"</span></code>, <code class="docutils literal notranslate"><span class="pre">"posX"</span></code> or <code class="docutils literal notranslate"><span class="pre">"posY"</span></code>) to see whether different patterns emerge. (The original setting is <code class="docutils literal notranslate"><span class="pre">sorting_latent="shape"</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span>  <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting RSMs..."</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">plot_model_RSMs</span><span class="p">(</span>
-    <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="n">supervised_encoder</span><span class="p">],</span> <span class="c1"># We pass the trained supervised_encoder</span>
+    <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="n">supervised_encoder</span><span class="p">],</span>  <span class="c1"># We pass the trained supervised_encoder</span>
     <span class="n">dataset</span><span class="o">=</span><span class="n">dSprites_torchdataset</span><span class="p">,</span>
-    <span class="n">sampler</span><span class="o">=</span><span class="n">test_sampler</span><span class="p">,</span> <span class="c1"># We want to see the representations on the held out test set</span>
-    <span class="n">titles</span><span class="o">=</span><span class="p">[</span><span class="s2">"Supervised network encoder RSM"</span><span class="p">],</span> <span class="c1"># Plot title</span>
+    <span class="n">sampler</span><span class="o">=</span><span class="n">test_sampler</span><span class="p">,</span>  <span class="c1"># We want to see the representations on the held out test set</span>
+    <span class="n">titles</span><span class="o">=</span><span class="p">[</span><span class="s2">"Supervised network encoder RSM"</span><span class="p">],</span>  <span class="c1"># Plot title</span>
     <span class="n">sorting_latent</span><span class="o">=</span><span class="n">sorting_latent</span><span class="p">,</span>
     <span class="n">RSM_fct</span><span class="o">=</span><span class="n">custom_torch_RSM_fct</span>
     <span class="p">)</span>
@@ -2827,9 +2862,9 @@ Training a classifier directly on the images...
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "24c0d0cd6a2840f381816d5a708f7a9d"}
+{"version_major": 2, "version_minor": 0, "model_id": "a2499f947374489a8df4faa345b31456"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "af41852a45b14fa384a1793ceb2dfd44"}
+{"version_major": 2, "version_minor": 0, "model_id": "4fe4ae73809b42b8a0d70f9881350886"}
 </script></div>
 </div>
 <p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_50b74052.py"><em>Click for solution</em></a></p>
@@ -2846,7 +2881,7 @@ Training a classifier directly on the images...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_72_0.png" src="../../../_images/W3D3_Tutorial1_72_0.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_74_0.png" src="../../../_images/W3D3_Tutorial1_74_0.png"/>
 </div>
 </div>
 </div>
@@ -2861,7 +2896,7 @@ Training a classifier directly on the images...
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "7a8f71d445c641df95814fa1aa0f43e8"}
+{"version_major": 2, "version_minor": 0, "model_id": "b4f91386280548339b13b485dfff44a2"}
 </script></div>
 </div>
 </div>
@@ -2874,7 +2909,7 @@ Training a classifier directly on the images...
 <p>The following code:</p>
 <ul class="simple">
 <li><p>Initializes an encoder network to use in the random network using the <code class="docutils literal notranslate"><span class="pre">models.EncoderCore</span></code> class,</p></li>
-<li><p>Proposes a latent dimension along which to sort the rows and columns (<code class="docutils literal notranslate"><span class="pre">sorting_latent</span> <span class="pre">=</span> <span class="pre">"shape"</span></code>).</p></li>
+<li><p>Proposes a latent dimension along which to sort the rows and columns (<code class="docutils literal notranslate"><span class="pre">sorting_latent="shape"</span></code>).</p></li>
 </ul>
 <p><strong>Exercise:</strong></p>
 <ul class="simple">
@@ -2903,7 +2938,7 @@ Training a classifier directly on the images...
   <span class="c1"># Initialize a core encoder network that will not get trained</span>
   <span class="n">random_encoder</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">EncoderCore</span><span class="p">()</span>
 
-  <span class="c1"># EXERCISE: Try sorting by different latent dimensions</span>
+  <span class="c1"># Try sorting by different latent dimensions</span>
   <span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span>
 
   <span class="c1">#################################################</span>
@@ -2911,7 +2946,7 @@ Training a classifier directly on the images...
   <span class="c1"># then remove or comment the line below to test your implementation</span>
   <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"Exercise: Plot RSMs."</span><span class="p">)</span>
   <span class="c1">#################################################</span>
-  <span class="c1"># EXERCISE: Plot RSMs</span>
+  <span class="c1"># Plot RSMs</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting RSMs..."</span><span class="p">)</span>
   <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">plot_model_RSMs</span><span class="p">(</span>
       <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>  <span class="c1"># Pass both encoders</span>
@@ -2934,9 +2969,9 @@ Training a classifier directly on the images...
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_4df68849.py"><em>Click for solution</em></a></p>
+<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_e3828140.py"><em>Click for solution</em></a></p>
 <p><em>Example output:</em></p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_4df68849_1.png"><img align="center" alt="Solution hint" class="align-center" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_4df68849_1.png" style="width: 1509.0px; height: 752.0px;"/></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_e3828140_1.png"><img align="center" alt="Solution hint" class="align-center" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_e3828140_1.png" style="width: 1509.0px; height: 752.0px;"/></a>
 </div>
 <div class="section" id="discussion-3-1-1-what-does-comparing-these-rsms-reveal-about-the-potential-value-of-trained-versus-random-encoder-representations">
 <h3>Discussion 3.1.1: What does comparing these RSMs reveal about the potential value of trained versus random encoder representations?<a class="headerlink" href="#discussion-3-1-1-what-does-comparing-these-rsms-reveal-about-the-potential-value-of-trained-versus-random-encoder-representations" title="Permalink to this headline">¶</a></h3>
@@ -2972,9 +3007,9 @@ Training a classifier directly on the images...
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "075329e929374a85a177d50428fb89db"}
+{"version_major": 2, "version_minor": 0, "model_id": "bb1f688f2a5d4c229b3a352958cd7ad0"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "e45d4c9516094339b7cf0af5d35adcf4"}
+{"version_major": 2, "version_minor": 0, "model_id": "a1f64f5a271945369874ec3fa32f09af"}
 </script></div>
 </div>
 <p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_8b06362b.py"><em>Click for solution</em></a></p>
@@ -2991,7 +3026,7 @@ Training a classifier directly on the images...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_86_0.png" src="../../../_images/W3D3_Tutorial1_86_0.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_88_0.png" src="../../../_images/W3D3_Tutorial1_88_0.png"/>
 </div>
 </div>
 </div>
@@ -3003,19 +3038,10 @@ Training a classifier directly on the images...
 <li><p>Trains a logistic regression on top of the random encoder network to classify images based on shape, and assesses its performance on the test set images using <code class="docutils literal notranslate"><span class="pre">models.train_classifier()</span></code> with <code class="docutils literal notranslate"><span class="pre">freeze_features=True</span></code> to ensure that the encoder is <strong>not</strong> trained, and only the classifier is.</p></li>
 </ul>
 <p><strong>Exercise:</strong></p>
-<ul>
-<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Set a number of epochs for which to train the classifier.  
-</pre></div>
-</div>
-</li>
-<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Plot the training loss array (`random_loss_array`, i.e. training loss at each epoch) returned when training the model.  
-</pre></div>
-</div>
-</li>
-<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Rerun the classifier if more training epochs are needed based on the progression of the training loss.
-</pre></div>
-</div>
-</li>
+<ul class="simple">
+<li><p>Set a number of epochs for which to train the classifier.</p></li>
+<li><p>Plot the training loss array (<code class="docutils literal notranslate"><span class="pre">random_loss_array</span></code>, i.e., training loss at each epoch) returned when training the model.</p></li>
+<li><p>Rerun the classifier if more training epochs are needed based on the progression of the training loss.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3053,7 +3079,7 @@ Training a classifier directly on the images...
   <span class="c1"># then remove or comment the line below to test your implementation</span>
   <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"Exercise: Plot loss array."</span><span class="p">)</span>
   <span class="c1">#################################################</span>
-  <span class="c1"># EXERCISE: Plot the loss array</span>
+  <span class="c1"># Plot the loss array</span>
   <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
   <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
   <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
@@ -3074,14 +3100,14 @@ Training a classifier directly on the images...
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_cc01d62c.py"><em>Click for solution</em></a></p>
-<p><em>Example output:</em></p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_cc01d62c_3.png"><img align="center" alt="Solution hint" class="align-center" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_cc01d62c_3.png" style="width: 1116.0px; height: 827.0px;"/></a>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Network</span> <span class="n">performance</span> <span class="n">after</span> <span class="mi">25</span> <span class="n">classifier</span> <span class="n">training</span> <span class="n">epochs</span> <span class="p">(</span><span class="n">chance</span><span class="p">:</span> <span class="mf">33.33</span><span class="o">%</span><span class="p">):</span>
     <span class="n">Training</span> <span class="n">accuracy</span><span class="p">:</span> <span class="mf">46.02</span><span class="o">%</span>
     <span class="n">Testing</span> <span class="n">accuracy</span><span class="p">:</span> <span class="mf">44.67</span><span class="o">%</span>
 </pre></div>
 </div>
+<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_f8e4d674.py"><em>Click for solution</em></a></p>
+<p><em>Example output:</em></p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_f8e4d674_3.png"><img align="center" alt="Solution hint" class="align-center" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_f8e4d674_3.png" style="width: 1116.0px; height: 827.0px;"/></a>
 <p>The network loss training is fairly stable by 25 epochs, at which point the classifier performs at 44.67% accuracy on the test dataset.</p>
 <p><b>Shape classification results using different feature encoders:</b></p>
 <table class="colwidths-auto table">
@@ -3097,7 +3123,7 @@ Training a classifier directly on the images...
 <tr class="row-even"><td><p><em>33.33%</em></p></td>
 <td><p></p></td>
 <td><p>39.55%</p></td>
-<td><p>98.38%</p></td>
+<td><p>98.67%</p></td>
 <td><p>44.67%</p></td>
 </tr>
 </tbody>
@@ -3138,9 +3164,9 @@ Training a classifier directly on the images...
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "447562b8427f4b088aa8389f1d16ed9b"}
+{"version_major": 2, "version_minor": 0, "model_id": "fdbde841a1054365a642358423f18cf8"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "53e9fb5ff3bb421bb74dcb6bcb3b713f"}
+{"version_major": 2, "version_minor": 0, "model_id": "a67b0d240269467ea9aefd22d09b8b39"}
 </script></div>
 </div>
 <p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_28e6be8a.py"><em>Click for solution</em></a></p>
@@ -3157,7 +3183,7 @@ Training a classifier directly on the images...
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "f526b80ee2c34164a7764d8c6a16b971"}
+{"version_major": 2, "version_minor": 0, "model_id": "cc9e0213b27b4315be46c3efbb6938fa"}
 </script></div>
 </div>
 </div>
@@ -3208,7 +3234,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_104_0.png" src="../../../_images/W3D3_Tutorial1_104_0.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_106_0.png" src="../../../_images/W3D3_Tutorial1_106_0.png"/>
 </div>
 </div>
 </div>
@@ -3225,14 +3251,14 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 <p><strong>Interactive Demo:</strong> Visualize the RSMs, organized along different latent dimensions (<code class="docutils literal notranslate"><span class="pre">"scale"</span></code>, <code class="docutils literal notranslate"><span class="pre">"orientation"</span></code>, <code class="docutils literal notranslate"><span class="pre">"posX"</span></code> or <code class="docutils literal notranslate"><span class="pre">"posY"</span></code>), and compare the patterns observed for the different encoder networks. (The original setting is <code class="docutils literal notranslate"><span class="pre">sorting_latent="shape"</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span>  <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting RSMs..."</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">plot_model_RSMs</span><span class="p">(</span>
-    <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="n">supervised_encoder</span><span class="p">,</span> <span class="n">random_encoder</span><span class="p">,</span> <span class="n">vae_encoder</span><span class="p">],</span> <span class="c1"># Pass all three encoders</span>
+    <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="n">supervised_encoder</span><span class="p">,</span> <span class="n">random_encoder</span><span class="p">,</span> <span class="n">vae_encoder</span><span class="p">],</span>  <span class="c1"># Pass all three encoders</span>
     <span class="n">dataset</span><span class="o">=</span><span class="n">dSprites_torchdataset</span><span class="p">,</span>
-    <span class="n">sampler</span><span class="o">=</span><span class="n">test_sampler</span><span class="p">,</span> <span class="c1"># To see the representations on the held out test set</span>
+    <span class="n">sampler</span><span class="o">=</span><span class="n">test_sampler</span><span class="p">,</span>  <span class="c1"># To see the representations on the held out test set</span>
     <span class="n">titles</span><span class="o">=</span><span class="p">[</span><span class="s2">"Supervised network encoder RSM"</span><span class="p">,</span> <span class="s2">"Random network encoder RSM"</span><span class="p">,</span>
-            <span class="s2">"VAE network encoder RSM"</span><span class="p">],</span> <span class="c1"># Plot titles</span>
+            <span class="s2">"VAE network encoder RSM"</span><span class="p">],</span>  <span class="c1"># Plot titles</span>
     <span class="n">sorting_latent</span><span class="o">=</span><span class="n">sorting_latent</span><span class="p">,</span>
     <span class="p">)</span>
 </pre></div>
@@ -3242,7 +3268,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting RSMs...
 </pre></div>
 </div>
-<img alt="../../../_images/W3D3_Tutorial1_108_1.png" src="../../../_images/W3D3_Tutorial1_108_1.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_110_1.png" src="../../../_images/W3D3_Tutorial1_110_1.png"/>
 </div>
 </div>
 </div>
@@ -3283,9 +3309,9 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "15bc70ad2e524088a1609fb7e47864fd"}
+{"version_major": 2, "version_minor": 0, "model_id": "76f24e67146f466bab63e789df3342c1"}
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "b5d99ba1be0049e8871624f6fb0e6486"}
+{"version_major": 2, "version_minor": 0, "model_id": "8a4c805165974f7e81c90f8f946c09c4"}
 </script></div>
 </div>
 <p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_b7aba28a.py"><em>Click for solution</em></a></p>
@@ -3302,7 +3328,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/W3D3_Tutorial1_114_0.png" src="../../../_images/W3D3_Tutorial1_114_0.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_116_0.png" src="../../../_images/W3D3_Tutorial1_116_0.png"/>
 </div>
 </div>
 </div>
@@ -3349,7 +3375,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
   <span class="c1"># then remove or comment the line below to test your implementation</span>
   <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"Exercise: Train a classifer on the pre-trained VAE encoder representations."</span><span class="p">)</span>
   <span class="c1">#################################################</span>
-  <span class="c1"># EXERCISE: Train an encoder and classifier on the images, using models.train_classifier()</span>
+  <span class="c1"># Train an encoder and classifier on the images, using models.train_classifier()</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">"Training a classifier on the pre-trained VAE encoder representations..."</span><span class="p">)</span>
   <span class="n">_</span><span class="p">,</span> <span class="n">vae_loss_array</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">train_classifier</span><span class="p">(</span>
       <span class="n">encoder</span><span class="o">=...</span><span class="p">,</span>
@@ -3365,7 +3391,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
   <span class="c1"># then remove or comment the line below to test your implementation</span>
   <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"Exercise: Plot the VAE classifier training loss."</span><span class="p">)</span>
   <span class="c1">#################################################</span>
-  <span class="c1"># EXERCISE: Plot the VAE classifier training loss.</span>
+  <span class="c1"># Plot the VAE classifier training loss.</span>
   <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
   <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
   <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
@@ -3386,15 +3412,15 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_a562b817.py"><em>Click for solution</em></a></p>
-<p><em>Example output:</em></p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_a562b817_3.png"><img align="center" alt="Solution hint" class="align-center" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_a562b817_3.png" style="width: 1116.0px; height: 827.0px;"/></a>
-<p>The network loss training is fairly stable by 25 epochs, at which point the classifier performs at 45.75% accuracy on the test dataset.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Network</span> <span class="n">performance</span> <span class="n">after</span> <span class="mi">25</span> <span class="n">classifier</span> <span class="n">training</span> <span class="n">epochs</span> <span class="p">(</span><span class="n">chance</span><span class="p">:</span> <span class="mf">33.33</span><span class="o">%</span><span class="p">):</span>
     <span class="n">Training</span> <span class="n">accuracy</span><span class="p">:</span> <span class="mf">46.48</span><span class="o">%</span>
     <span class="n">Testing</span> <span class="n">accuracy</span><span class="p">:</span> <span class="mf">45.75</span><span class="o">%</span>
 </pre></div>
 </div>
+<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_bbc693a9.py"><em>Click for solution</em></a></p>
+<p><em>Example output:</em></p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_bbc693a9_3.png"><img align="center" alt="Solution hint" class="align-center" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_bbc693a9_3.png" style="width: 1116.0px; height: 827.0px;"/></a>
+<p>The network loss training is fairly stable by 25 epochs, at which point the classifier performs at 45.75% accuracy on the test dataset.</p>
 <p><b>Shape classification results using different feature encoders:</b></p>
 <table class="colwidths-auto table">
 <thead>
@@ -3410,7 +3436,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 <tr class="row-even"><td><p><em>33.33%</em></p></td>
 <td><p></p></td>
 <td><p>39.55%</p></td>
-<td><p>98.38%</p></td>
+<td><p>98.67%</p></td>
 <td><p>44.67%</p></td>
 <td><p>45.75%</p></td>
 </tr>
@@ -3428,7 +3454,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "9cbd9e58c0304c788e03936bf0e29268"}
+{"version_major": 2, "version_minor": 0, "model_id": "087883fb4de34785b507960c42b0a5d6"}
 </script></div>
 </div>
 </div>
@@ -3480,7 +3506,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2021 has been set.
 </pre></div>
 </div>
-<img alt="../../../_images/W3D3_Tutorial1_127_1.png" src="../../../_images/W3D3_Tutorial1_127_1.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_129_1.png" src="../../../_images/W3D3_Tutorial1_129_1.png"/>
 </div>
 </div>
 </div>
@@ -3495,7 +3521,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "7b990bfec4d74a3bbdde4866097aaaaa"}
+{"version_major": 2, "version_minor": 0, "model_id": "167da5c069584316a0d8c2b4359d5499"}
 </script></div>
 </div>
 </div>
@@ -3590,7 +3616,7 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
   <span class="c1"># then remove or comment the line below to test your function</span>
   <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"Exercise: Implement SimCLR loss."</span><span class="p">)</span>
   <span class="c1">#################################################</span>
-  <span class="c1"># EXERCISE: Implement the SimClr loss calculation</span>
+  <span class="c1"># Implement the SimClr loss calculation</span>
   <span class="c1"># Calculate the numerator of the Loss expression by selecting the appropriate elements from similarity_matrix.</span>
   <span class="c1"># Use the pos_sample_indicators tensor</span>
   <span class="n">numerator</span> <span class="o">=</span> <span class="o">...</span>
@@ -3617,10 +3643,10 @@ Loading VAE decoder from 'neuromatch_ssl_tutorial/checkpoints/vae_decoder_300ep_
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_d3b70950.py"><em>Click for solution</em></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">custom_simclr_contrastive_loss</span><span class="p">()</span> <span class="ow">is</span> <span class="n">correctly</span> <span class="n">implemented</span><span class="o">.</span>
 </pre></div>
 </div>
+<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_47549fa4.py"><em>Click for solution</em></a></p>
 <p>We can now train the SimCLR encoder with the custom contrastive loss for a few epochs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3691,8 +3717,8 @@ with the following random affine transforms:
     <span class="n">dataset</span><span class="o">=</span><span class="n">dSprites_torchdataset</span><span class="p">,</span>
     <span class="n">train_sampler</span><span class="o">=</span><span class="n">train_sampler</span><span class="p">,</span>
     <span class="n">test_sampler</span><span class="o">=</span><span class="n">test_sampler</span><span class="p">,</span>
-    <span class="n">freeze_features</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># Keep the encoder frozen while training the classifier</span>
-    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="c1"># DEMO: Try different numbers of epochs</span>
+    <span class="n">freeze_features</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Keep the encoder frozen while training the classifier</span>
+    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># DEMO: Try different numbers of epochs</span>
     <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span>
     <span class="p">)</span>
 
@@ -3710,13 +3736,13 @@ Training a classifier on the pre-trained SimCLR encoder representations...
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "9cd0caa79f19418ab424da1196914aab"}
+{"version_major": 2, "version_minor": 0, "model_id": "2b2e87fc107c45efb40029bf73d773ab"}
 </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Network performance after 10 classifier training epochs (chance: 33.33%):
     Training accuracy: 97.83%
     Testing accuracy: 97.53%
 </pre></div>
 </div>
-<img alt="../../../_images/W3D3_Tutorial1_142_3.png" src="../../../_images/W3D3_Tutorial1_142_3.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_144_3.png" src="../../../_images/W3D3_Tutorial1_144_3.png"/>
 </div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Network</span> <span class="n">performance</span> <span class="n">after</span> <span class="mi">10</span> <span class="n">classifier</span> <span class="n">training</span> <span class="n">epochs</span> <span class="p">(</span><span class="n">chance</span><span class="p">:</span> <span class="mf">33.33</span><span class="o">%</span><span class="p">):</span>
@@ -3741,7 +3767,7 @@ Training a classifier on the pre-trained SimCLR encoder representations...
 <tr class="row-even"><td><p><em>33.33%</em></p></td>
 <td><p></p></td>
 <td><p>39.55%</p></td>
-<td><p>98.38%</p></td>
+<td><p>98.67%</p></td>
 <td><p>44.67%</p></td>
 <td><p>45.75%</p></td>
 <td><p>97.53%</p></td>
@@ -3759,7 +3785,7 @@ Training a classifier on the pre-trained SimCLR encoder representations...
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "42052cdbdbcb48a2a78c87edcec7348a"}
+{"version_major": 2, "version_minor": 0, "model_id": "96f221b9bb5242e8bd28bfa766282a6c"}
 </script></div>
 </div>
 </div>
@@ -3781,12 +3807,12 @@ Training a classifier on the pre-trained SimCLR encoder representations...
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
-<span class="n">bias_type</span> <span class="o">=</span> <span class="s2">"shape_posX_spaced"</span> <span class="c1"># Name of bias</span>
+<span class="n">bias_type</span> <span class="o">=</span> <span class="s2">"shape_posX_spaced"</span>  <span class="c1"># Name of bias</span>
 
 <span class="c1"># Initialize a biased training sampler and an unbiased test sampler</span>
 <span class="n">train_sampler_biased</span><span class="p">,</span> <span class="n">test_sampler_for_biased</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">train_test_split_idx</span><span class="p">(</span>
     <span class="n">dSprites_torchdataset</span><span class="p">,</span>
-    <span class="n">fraction_train</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="c1"># 95:5 Split to partially compensate for loss of training examples due to bias</span>
+    <span class="n">fraction_train</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>  <span class="c1"># 95:5 Split to partially compensate for loss of training examples due to bias</span>
     <span class="n">randst</span><span class="o">=</span><span class="n">SEED</span><span class="p">,</span>
     <span class="n">train_bias</span><span class="o">=</span><span class="n">bias_type</span>
     <span class="p">)</span>
@@ -3797,7 +3823,7 @@ Training a classifier on the pre-trained SimCLR encoder representations...
     <span class="n">fraction_train</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
     <span class="n">randst</span><span class="o">=</span><span class="n">SEED</span><span class="p">,</span>
     <span class="n">train_bias</span><span class="o">=</span><span class="n">bias_type</span><span class="p">,</span>
-    <span class="n">control</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">control</span><span class="o">=</span><span class="kc">True</span>
     <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Biased dataset: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_sampler_biased</span><span class="p">)</span><span class="si">}</span><span class="s2"> training, "</span>
@@ -3832,7 +3858,7 @@ Bias control dataset: 5808 training, 1000 test images
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting first 20 images from the biased training dataset.
 </pre></div>
 </div>
-<img alt="../../../_images/W3D3_Tutorial1_153_1.png" src="../../../_images/W3D3_Tutorial1_153_1.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_155_1.png" src="../../../_images/W3D3_Tutorial1_155_1.png"/>
 </div>
 </div>
 <p>We also plot some images sampled with <code class="docutils literal notranslate"><span class="pre">train_sampler_bias_ctrl</span></code> to verify visually that this biased pattern does not appear in the control dataset.</p>
@@ -3848,7 +3874,7 @@ Bias control dataset: 5808 training, 1000 test images
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting sample images from the bias control training dataset.
 </pre></div>
 </div>
-<img alt="../../../_images/W3D3_Tutorial1_155_1.png" src="../../../_images/W3D3_Tutorial1_155_1.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_157_1.png" src="../../../_images/W3D3_Tutorial1_157_1.png"/>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -3932,7 +3958,7 @@ Bias control dataset: 5808 training, 1000 test images
 <span class="n">full_training_procedure</span><span class="p">(</span>
     <span class="n">train_sampler_bias_ctrl</span><span class="p">,</span> <span class="n">test_sampler_for_bias_ctrl</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">"Classifier performances with control, unbiased training dataset"</span><span class="p">,</span>
-    <span class="n">dataset_type</span><span class="o">=</span><span class="s2">"bias_ctrl"</span> <span class="c1"># For loading correct pre-trained networks</span>
+    <span class="n">dataset_type</span><span class="o">=</span><span class="s2">"bias_ctrl"</span>  <span class="c1"># For loading correct pre-trained networks</span>
     <span class="p">)</span>
 </pre></div>
 </div>
@@ -3957,16 +3983,16 @@ Supervised encoder: training classifiers and encoders*...
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "cf7022023f854fb29a91cbf04b35bec6"}
+{"version_major": 2, "version_minor": 0, "model_id": "baac4d992f3a4dfd88c27143df287ec7"}
 </script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_50068</span><span class="o">/</span><span class="mf">2016874565.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_46900</span><span class="o">/</span><span class="mf">479105170.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">train_sampler_bias_ctrl</span><span class="p">,</span> <span class="n">test_sampler_for_bias_ctrl</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">title</span><span class="o">=</span><span class="s2">"Classifier performances with control, unbiased training dataset"</span><span class="p">,</span>
-<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="n">dataset_type</span><span class="o">=</span><span class="s2">"bias_ctrl"</span> <span class="c1"># For loading correct pre-trained networks</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="n">dataset_type</span><span class="o">=</span><span class="s2">"bias_ctrl"</span>  <span class="c1"># For loading correct pre-trained networks</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="p">)</span>
 
-<span class="nn">/tmp/ipykernel_50068/2560353447.py</span> in <span class="ni">full_training_procedure</span><span class="nt">(train_sampler, test_sampler, title, dataset_type, verbose)</span>
+<span class="nn">/tmp/ipykernel_46900/2560353447.py</span> in <span class="ni">full_training_procedure</span><span class="nt">(train_sampler, test_sampler, title, dataset_type, verbose)</span>
 <span class="g g-Whitespace">     </span><span class="mi">60</span>       <span class="n">encoder_labels</span><span class="o">=</span><span class="n">encoder_labels</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">61</span>       <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
 <span class="ne">---&gt; </span><span class="mi">62</span>       <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span>
@@ -3987,58 +4013,30 @@ Supervised encoder: training classifiers and encoders*...
 <span class="g g-Whitespace">   </span><span class="mi">1071</span> 
 
 <span class="nn">~/work/course-content-dl/course-content-dl/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/student/neuromatch_ssl_tutorial/modules/models.py</span> in <span class="ni">train_classifier</span><span class="nt">(encoder, dataset, train_sampler, test_sampler, num_epochs, fraction_of_labels, batch_size, freeze_features, subset_seed, use_cuda, progress_bar, verbose)</span>
-<span class="g g-Whitespace">    </span><span class="mi">292</span>                 <span class="n">features</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">293</span>             <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">294</span>                 <span class="n">features</span> <span class="o">=</span> <span class="n">encoder</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span> 
 <span class="g g-Whitespace">    </span><span class="mi">296</span>             <span class="n">predicted_y_logits</span> <span class="o">=</span> <span class="n">classifier</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">start_dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>             <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">predicted_y_logits</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">298</span>             <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>             <span class="n">classification_optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> 
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *input, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1128</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1129</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1130</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="c1"># Do not call functions when jit is used</span>
-<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="n">full_backward_hooks</span><span class="p">,</span> <span class="n">non_full_backward_hooks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/_tensor.py</span> in <span class="ni">backward</span><span class="nt">(self, gradient, retain_graph, create_graph, inputs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>                 <span class="n">create_graph</span><span class="o">=</span><span class="n">create_graph</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>                 <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">363</span>         <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gradient</span><span class="p">,</span> <span class="n">retain_graph</span><span class="p">,</span> <span class="n">create_graph</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span> 
+<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="k">def</span> <span class="nf">register_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hook</span><span class="p">):</span>
 
-<span class="nn">~/work/course-content-dl/course-content-dl/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/student/neuromatch_ssl_tutorial/modules/models.py</span> in <span class="ni">forward</span><span class="nt">(self, X)</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">untrained</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">training</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_untrained</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="ne">--&gt; </span><span class="mi">154</span>         <span class="n">feats_extr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_extractor</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span>         <span class="n">feats_flat</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">feats_extr</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span>         <span class="n">feats_proj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear_projections</span><span class="p">(</span><span class="n">feats_flat</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *input, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1128</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1129</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1130</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="c1"># Do not call functions when jit is used</span>
-<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="n">full_backward_hooks</span><span class="p">,</span> <span class="n">non_full_backward_hooks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/container.py</span> in <span class="ni">forward</span><span class="nt">(self, input)</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">139</span>             <span class="nb">input</span> <span class="o">=</span> <span class="n">module</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span>         <span class="k">return</span> <span class="nb">input</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ni">_call_impl</span><span class="nt">(self, *input, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1128</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1129</span>                 <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1130</span>             <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="nb">input</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="c1"># Do not call functions when jit is used</span>
-<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="n">full_backward_hooks</span><span class="p">,</span> <span class="n">non_full_backward_hooks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/nn/modules/pooling.py</span> in <span class="ni">forward</span><span class="nt">(self, input)</span>
-<span class="g g-Whitespace">    </span><span class="mi">621</span>     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">622</span>         <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">avg_pool2d</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernel_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stride</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">623</span>                             <span class="bp">self</span><span class="o">.</span><span class="n">padding</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ceil_mode</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">count_include_pad</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">divisor_override</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">624</span> 
-<span class="g g-Whitespace">    </span><span class="mi">625</span> 
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/autograd/__init__.py</span> in <span class="ni">backward</span><span class="nt">(tensors, grad_tensors, retain_graph, create_graph, grad_variables, inputs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span>     <span class="n">Variable</span><span class="o">.</span><span class="n">_execution_engine</span><span class="o">.</span><span class="n">run_backward</span><span class="p">(</span>  <span class="c1"># Calls into the C++ engine to run the backward pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>         <span class="n">tensors</span><span class="p">,</span> <span class="n">grad_tensors_</span><span class="p">,</span> <span class="n">retain_graph</span><span class="p">,</span> <span class="n">create_graph</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">175</span>         <span class="n">allow_unreachable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">accumulate_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Calls into the C++ engine to run the backward pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span> 
+<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="k">def</span> <span class="nf">grad</span><span class="p">(</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
-<img alt="../../../_images/W3D3_Tutorial1_158_3.png" src="../../../_images/W3D3_Tutorial1_158_3.png"/>
+<img alt="../../../_images/W3D3_Tutorial1_160_3.png" src="../../../_images/W3D3_Tutorial1_160_3.png"/>
 </div>
 </div>
 <p>A similar pattern is observed here as with the full dataset, though notably most performances are a bit weaker, likely due to us (A) using a smaller training dataset, and (B) training and pre-training for fewer iterations, considering the dataset size, for time-efficiency reasons.</p>
@@ -4053,7 +4051,7 @@ Supervised encoder: training classifiers and encoders*...
 <span class="n">full_training_procedure</span><span class="p">(</span>
     <span class="n">train_sampler_biased</span><span class="p">,</span> <span class="n">test_sampler_for_biased</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">"Classifier performances with biased training dataset"</span><span class="p">,</span>
-    <span class="n">dataset_type</span><span class="o">=</span><span class="s2">"biased"</span> <span class="c1"># For loading correct pre-trained networks</span>
+    <span class="n">dataset_type</span><span class="o">=</span><span class="s2">"biased"</span>  <span class="c1"># For loading correct pre-trained networks</span>
     <span class="p">)</span>
 </pre></div>
 </div>
@@ -4132,14 +4130,14 @@ In real-world applications, with more complex or difficult datasets,<br>
 <p><strong>Interactive Demo:</strong> Visualize the RSMs, organized along different latent dimensions (<code class="docutils literal notranslate"><span class="pre">"scale"</span></code>, <code class="docutils literal notranslate"><span class="pre">"orientation"</span></code>, <code class="docutils literal notranslate"><span class="pre">"posX"</span></code> or <code class="docutils literal notranslate"><span class="pre">"posY"</span></code>), and compare the patterns observed for the different encoder networks. (The original setting is <code class="docutils literal notranslate"><span class="pre">sorting_latent="shape"</span></code>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span> <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorting_latent</span> <span class="o">=</span> <span class="s2">"shape"</span>  <span class="c1"># DEMO: Try sorting by different latent dimensions</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Plotting RSMs..."</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">plot_model_RSMs</span><span class="p">(</span>
     <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="n">supervised_encoder</span><span class="p">,</span> <span class="n">vae_encoder</span><span class="p">,</span> <span class="n">simclr_encoder</span><span class="p">],</span>
     <span class="n">dataset</span><span class="o">=</span><span class="n">dSprites_torchdataset</span><span class="p">,</span>
-    <span class="n">sampler</span><span class="o">=</span><span class="n">test_sampler</span><span class="p">,</span> <span class="c1"># To see the representations on the held out test set</span>
+    <span class="n">sampler</span><span class="o">=</span><span class="n">test_sampler</span><span class="p">,</span>  <span class="c1"># To see the representations on the held out test set</span>
     <span class="n">titles</span><span class="o">=</span><span class="p">[</span><span class="s2">"Supervised network encoder RSM"</span><span class="p">,</span> <span class="s2">"VAE network encoder RSM"</span><span class="p">,</span>
-            <span class="s2">"SimCLR network encoder RSM"</span><span class="p">],</span> <span class="c1"># Plot titles</span>
+            <span class="s2">"SimCLR network encoder RSM"</span><span class="p">],</span>  <span class="c1"># Plot titles</span>
     <span class="n">sorting_latent</span><span class="o">=</span><span class="n">sorting_latent</span>
     <span class="p">)</span>
 </pre></div>
@@ -4242,7 +4240,7 @@ In real-world applications, with more complex or difficult datasets,<br>
   <span class="c1"># then remove or comment the line below to test your implementation</span>
   <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"Exercise: Plot histogram."</span><span class="p">)</span>
   <span class="c1">#################################################</span>
-  <span class="c1"># EXERCISE: Plot a histogram of RSM values for both SimCLR encoders.</span>
+  <span class="c1"># Plot a histogram of RSM values for both SimCLR encoders.</span>
   <span class="n">plot_rsm_histogram</span><span class="p">(</span>
       <span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
       <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
@@ -4257,10 +4255,10 @@ In real-world applications, with more complex or difficult datasets,<br>
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_a4bc3c82.py"><em>Click for solution</em></a></p>
+<p><a class="reference external" href="https://github.com/NeuromatchAcademy/course-content-dl/tree/main//tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/solutions/W3D3_Tutorial1_Solution_8da89b74.py"><em>Click for solution</em></a></p>
 <p><em>Example output:</em></p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_a4bc3c82_1.png"><img align="center" alt="Solution hint" class="align-center" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_a4bc3c82_1.png" style="width: 2258.0px; height: 759.0px;"/></a>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_a4bc3c82_2.png"><img align="center" alt="Solution hint" class="align-center" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_a4bc3c82_2.png" style="width: 1120.0px; height: 833.0px;"/></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_8da89b74_1.png"><img align="center" alt="Solution hint" class="align-center" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_8da89b74_1.png" style="width: 2258.0px; height: 759.0px;"/></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_8da89b74_2.png"><img align="center" alt="Solution hint" class="align-center" src="https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W3D3_UnsupervisedAndSelfSupervisedLearning/static/W3D3_Tutorial1_Solution_8da89b74_2.png" style="width: 1120.0px; height: 833.0px;"/></a>
 </div>
 <div class="section" id="bonus-discussion-2-1-1-what-can-we-conclude-about-the-importance-of-negative-pairs-in-computing-the-contrastive-loss-for-models-like-simclr">
 <h3>Bonus Discussion 2.1.1: What can we conclude about the importance of negative pairs in computing the contrastive loss for models like SimCLR?<a class="headerlink" href="#bonus-discussion-2-1-1-what-can-we-conclude-about-the-importance-of-negative-pairs-in-computing-the-contrastive-loss-for-models-like-simclr" title="Permalink to this headline">¶</a></h3>
@@ -4294,14 +4292,14 @@ In real-world applications, with more complex or difficult datasets,<br>
       <span class="s2">"network encoder pre-trained</span><span class="se">\n</span><span class="s2">using only 2 negative pairs per image "</span>
       <span class="s2">"for the loss calculation..."</span><span class="p">)</span>
 <span class="n">_</span><span class="p">,</span> <span class="n">simclr_neg_pairs_loss_array</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">train_classifier</span><span class="p">(</span>
-  <span class="n">encoder</span><span class="o">=</span><span class="n">simclr_encoder_neg_pairs</span><span class="p">,</span>
-  <span class="n">dataset</span><span class="o">=</span><span class="n">dSprites_torchdataset</span><span class="p">,</span>
-  <span class="n">train_sampler</span><span class="o">=</span><span class="n">train_sampler</span><span class="p">,</span>
-  <span class="n">test_sampler</span><span class="o">=</span><span class="n">test_sampler</span><span class="p">,</span>
-  <span class="n">freeze_features</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># Keep the encoder frozen while training the classifier</span>
-  <span class="n">num_epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="c1"># DEMO: Try different numbers of epochs</span>
-  <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span>
-  <span class="p">)</span>
+    <span class="n">encoder</span><span class="o">=</span><span class="n">simclr_encoder_neg_pairs</span><span class="p">,</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="n">dSprites_torchdataset</span><span class="p">,</span>
+    <span class="n">train_sampler</span><span class="o">=</span><span class="n">train_sampler</span><span class="p">,</span>
+    <span class="n">test_sampler</span><span class="o">=</span><span class="n">test_sampler</span><span class="p">,</span>
+    <span class="n">freeze_features</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Keep the encoder frozen while training the classifier</span>
+    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>  <span class="c1"># DEMO: Try different numbers of epochs</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
 
 <span class="c1"># Plot the loss array</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -4332,7 +4330,7 @@ In real-world applications, with more complex or difficult datasets,<br>
 <tr class="row-even"><td><p><em>33.33%</em></p></td>
 <td><p></p></td>
 <td><p>39.55%</p></td>
-<td><p>98.38%</p></td>
+<td><p>98.67%</p></td>
 <td><p>44.67%</p></td>
 <td><p>45.75%</p></td>
 <td><p>97.53%</p></td>
@@ -4374,16 +4372,16 @@ In real-world applications, with more complex or difficult datasets,<br>
 <span class="c1"># to ensure reproducibility</span>
 <span class="n">set_seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
 
-<span class="n">new_supervised_encoder</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">EncoderCore</span><span class="p">()</span> <span class="c1"># New, random supervised encoder</span>
+<span class="n">new_supervised_encoder</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">EncoderCore</span><span class="p">()</span>  <span class="c1"># New, random supervised encoder</span>
 
 <span class="n">_</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">train_encoder_clfs_by_fraction_labelled</span><span class="p">(</span>
     <span class="n">encoders</span><span class="o">=</span><span class="p">[</span><span class="n">new_supervised_encoder</span><span class="p">,</span> <span class="n">random_encoder</span><span class="p">,</span> <span class="n">vae_encoder</span><span class="p">,</span> <span class="n">simclr_encoder</span><span class="p">],</span>
     <span class="n">dataset</span><span class="o">=</span><span class="n">dSprites_torchdataset</span><span class="p">,</span>
     <span class="n">train_sampler</span><span class="o">=</span><span class="n">train_sampler</span><span class="p">,</span>
     <span class="n">test_sampler</span><span class="o">=</span><span class="n">test_sampler</span><span class="p">,</span>
-    <span class="n">labelled_fractions</span><span class="o">=</span><span class="p">[</span><span class="mf">0.01</span><span class="p">],</span> <span class="c1"># DEMO: select 4-6 fractions to run</span>
-    <span class="n">num_epochs</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="c1"># Train the supervised network (end-to-end) for more epochs</span>
-    <span class="n">freeze_features</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="c1"># Only train new supervised network end-to-end</span>
+    <span class="n">labelled_fractions</span><span class="o">=</span><span class="p">[</span><span class="mf">0.01</span><span class="p">],</span>  <span class="c1"># DEMO: select 4-6 fractions to run</span>
+    <span class="n">num_epochs</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>  <span class="c1"># Train the supervised network (end-to-end) for more epochs</span>
+    <span class="n">freeze_features</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>  <span class="c1"># Only train new supervised network end-to-end</span>
     <span class="n">subset_seed</span><span class="o">=</span><span class="n">SEED</span><span class="p">,</span>
     <span class="n">encoder_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">"supervised"</span><span class="p">,</span> <span class="s2">"random"</span><span class="p">,</span> <span class="s2">"VAE"</span><span class="p">,</span> <span class="s2">"SimCLR"</span><span class="p">],</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">"Performance of classifiers trained</span><span class="se">\n</span><span class="s2">with different network encoders"</span><span class="p">,</span>
