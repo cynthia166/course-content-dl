@@ -575,7 +575,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../tutorials/W3D5_ReinforcementLearningForGames/student/W3D5_Tutorial1.html">
-     Tutorial 1: Learn to play games with RL
+     Tutorial 1: Game Set-Up and Random Player
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D5_ReinforcementLearningForGames/student/W3D5_Tutorial2.html">
+     Tutorial 2: Value-Based Player
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D5_ReinforcementLearningForGames/student/W3D5_Tutorial3.html">
+     Tutorial 3: Policy-based Player
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D5_ReinforcementLearningForGames/student/W3D5_Tutorial4.html">
+     Bonus Tutorial: Planning with Monte Carlo
     </a>
    </li>
    <li class="toctree-l2">
@@ -1529,8 +1544,8 @@ GPU is enabled in this notebook.
 <div class="section" id="mixup">
 <h2>Mixup<a class="headerlink" href="#mixup" title="Permalink to this headline">¶</a></h2>
 <p>Mixup is a data augmentation technique that combines pairs of examples via a convex combination of the images and the labels. Given images <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span> with labels <span class="math notranslate nohighlight">\(y_i\)</span> and <span class="math notranslate nohighlight">\(y_j\)</span>, respectively, and <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span>, mixup creates a new image <span class="math notranslate nohighlight">\(\hat{x}\)</span> with label <span class="math notranslate nohighlight">\(\hat{y}\)</span> the following way:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2b8ad3ea-3a8a-4524-9648-21e45b6dc799">
-<span class="eqno">(132)<a class="headerlink" href="#equation-2b8ad3ea-3a8a-4524-9648-21e45b6dc799" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-533f8a4a-0044-42ad-bc6a-d5ed11447c42">
+<span class="eqno">(135)<a class="headerlink" href="#equation-533f8a4a-0044-42ad-bc6a-d5ed11447c42" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \hat{x} &amp;= \lambda x_i + (1 - \lambda) x_j \\
 \hat{y} &amp;= \lambda y_i + (1 - \lambda) y_j
 \end{align}\]</div>

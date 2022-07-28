@@ -575,7 +575,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../tutorials/W3D5_ReinforcementLearningForGames/student/W3D5_Tutorial1.html">
-     Tutorial 1: Learn to play games with RL
+     Tutorial 1: Game Set-Up and Random Player
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D5_ReinforcementLearningForGames/student/W3D5_Tutorial2.html">
+     Tutorial 2: Value-Based Player
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D5_ReinforcementLearningForGames/student/W3D5_Tutorial3.html">
+     Tutorial 3: Policy-based Player
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/W3D5_ReinforcementLearningForGames/student/W3D5_Tutorial4.html">
+     Bonus Tutorial: Planning with Monte Carlo
     </a>
    </li>
    <li class="toctree-l2">
@@ -1311,8 +1326,8 @@ title="Print to PDF"
 <p><em>Part of step 5</em></p>
 <p>We chose to use a <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2474742/">Drift-Diffusion Model (DDM)</a> because it is a well-established framework that allows us to model decision making in the case of 2 alternative choices (here: self-motion vs. other train motion).</p>
 <p>For our purposes simplest equation looks something like this:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-99c02923-109a-4f27-a7e2-4669ec19586a">
-<span class="eqno">(131)<a class="headerlink" href="#equation-99c02923-109a-4f27-a7e2-4669ec19586a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-177db3cf-8b2a-4f79-875d-1caa6fbdb481">
+<span class="eqno">(134)<a class="headerlink" href="#equation-177db3cf-8b2a-4f79-875d-1caa6fbdb481" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \dot e = \frac{de}{dt}= -c \cdot e + v \, ,
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(e\)</span> is the accumulated evidence and <span class="math notranslate nohighlight">\(v\)</span> is our vestibular input already containing the noise (so we don’t need to add more noise?). <span class="math notranslate nohighlight">\(c\)</span> is the leakage constant, i.e., <span class="math notranslate nohighlight">\(c=0\)</span> means perfect integration; <span class="math notranslate nohighlight">\(c=1\)</span> means no integration (perfect leakage).</p>
@@ -1497,7 +1512,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -1600,7 +1615,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Motion detected for no-motion: 30.6% and motion: 59.5%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Motion detected for no-motion: 30.0% and motion: 60.8%
 </pre></div>
 </div>
 </div>
