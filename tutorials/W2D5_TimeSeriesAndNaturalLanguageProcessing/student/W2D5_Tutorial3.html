@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>(Bonus) Tutorial 3: Multilingual Embeddings — Neuromatch Academy: Deep Learning</title>
+<title>Bonus Tutorial: Multilingual Embeddings — Neuromatch Academy: Deep Learning</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -351,7 +351,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l2">
 <a class="reference internal" href="../../W2D3_ModernConvnets/student/W2D3_Tutorial2.html">
-     (Bonus) Tutorial 2: Facial recognition using modern convnets
+     Bonus Tutorial: Facial recognition using modern convnets
     </a>
 </li>
 </ul>
@@ -383,7 +383,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l2">
 <a class="reference internal" href="../../W2D4_GenerativeModels/student/W2D4_Tutorial4.html">
-     (Bonus) Tutorial 4: Deploying Neural Networks on the Web
+     Bonus Tutorial: Deploying Neural Networks on the Web
     </a>
 </li>
 <li class="toctree-l2">
@@ -422,7 +422,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l2 current active">
 <a class="current reference internal" href="#">
-     (Bonus) Tutorial 3: Multilingual Embeddings
+     Bonus Tutorial: Multilingual Embeddings
     </a>
 </li>
 </ul>
@@ -527,7 +527,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l2">
 <a class="reference internal" href="../../W3D4_BasicReinforcementLearning/student/W3D4_Tutorial5.html">
-     (Bonus) Tutorial 5: Function approximation
+     Bonus Tutorial: Function approximation
     </a>
 </li>
 <li class="toctree-l2">
@@ -939,7 +939,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry">
 <a class="reference internal nav-link" href="#">
-   (Bonus) Tutorial 3: Multilingual Embeddings
+   Bonus Tutorial: Multilingual Embeddings
   </a>
 </li>
 <li class="toc-h1 nav-item toc-entry">
@@ -1016,7 +1016,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>(Bonus) Tutorial 3: Multilingual Embeddings</h1>
+<h1>Bonus Tutorial: Multilingual Embeddings</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -1027,7 +1027,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry">
 <a class="reference internal nav-link" href="#">
-   (Bonus) Tutorial 3: Multilingual Embeddings
+   Bonus Tutorial: Multilingual Embeddings
   </a>
 </li>
 <li class="toc-h1 nav-item toc-entry">
@@ -1104,8 +1104,8 @@ const thebe_selector_output = ".output, .cell_output"
 <main id="main-content" role="main">
 <div>
 <p><a href="https://colab.research.google.com/github/NeuromatchAcademy/course-content-dl/blob/main/tutorials/W2D5_TimeSeriesAndNaturalLanguageProcessing/student/W2D5_Tutorial3.ipynb" target="_blank"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>   <a href="https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/NeuromatchAcademy/course-content-dl/main/tutorials/W2D5_TimeSeriesAndNaturalLanguageProcessing/student/W2D5_Tutorial3.ipynb" target="_blank"><img alt="Open in Kaggle" src="https://kaggle.com/static/images/open-in-kaggle.svg"/></a></p>
-<div class="section" id="bonus-tutorial-3-multilingual-embeddings">
-<h1>(Bonus) Tutorial 3: Multilingual Embeddings<a class="headerlink" href="#bonus-tutorial-3-multilingual-embeddings" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="bonus-tutorial-multilingual-embeddings">
+<h1>Bonus Tutorial: Multilingual Embeddings<a class="headerlink" href="#bonus-tutorial-multilingual-embeddings" title="Permalink to this headline">¶</a></h1>
 <p><strong>Week 2, Day 5: Time Series And Natural Language Processing</strong></p>
 <p><strong>By Neuromatch Academy</strong></p>
 <p><strong>Content creators:</strong> Alish Dipani, Kelson Shilling-Scrivo, Lyle Ungar</p>
@@ -1352,8 +1352,8 @@ with zipfile.ZipFile(fname, 'r') as zipObj:
 <h2>Training multilingual embeddings<a class="headerlink" href="#training-multilingual-embeddings" title="Permalink to this headline">¶</a></h2>
 <p>We first train separate embeddings for each language using fastText and a combination of data from Facebook and Wikipedia. Then, we find a dictionary of common words between the two languages. The dictionaries are automatically induced from parallel data - datasets consisting of a pair of sentences in two languages with the same meaning.</p>
 <p>Then, we find a matrix that projects the embeddings into a common space between the given languages. The matrix is designed to minimize the distance between a word <span class="math notranslate nohighlight">\(x_i\)</span> and its projection <span class="math notranslate nohighlight">\(y_i\)</span>. If our dictionary consists of pairs <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>, our projector <span class="math notranslate nohighlight">\(M\)</span> would be:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e03a613-83c6-45a6-b7ec-fe4ebd19a842">
-<span class="eqno">(100)<a class="headerlink" href="#equation-7e03a613-83c6-45a6-b7ec-fe4ebd19a842" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-40c4d4dc-9377-413b-bb72-f1a81d04e1bd">
+<span class="eqno">(100)<a class="headerlink" href="#equation-40c4d4dc-9377-413b-bb72-f1a81d04e1bd" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 M = \underset{W}{\operatorname{argmax}} \sum_i ||x_i - Wy_i||^2
 \end{equation}\]</div>
 <p>Also, the projector matrix <span class="math notranslate nohighlight">\(W\)</span> is constrained to e orthogonal, so actual distances between word embedding vectors are preserved. Multilingual models are trained by using our multilingual word embeddings as the base representations in DeepText and “freezing” them or leaving them unchanged during the training process.</p>
